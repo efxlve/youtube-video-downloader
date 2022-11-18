@@ -1,0 +1,82 @@
+﻿<Window x:Class="YoutubeVideoDownloader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YoutubeVideoDownloader"
+        mc:Ignorable="d"
+        Title="Youtube Video Downloader" Height="460" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" FontFamily="Corbel" FontSize="14" MouseEnter="Window_MouseEnter" Icon="/Windows/favicon.png">
+    <Window.Background>
+        <ImageBrush ImageSource="/Resources/purple-white-background.jpg"/>
+    </Window.Background>
+
+    <Grid>
+        <Label Content="Youtube Video Downloader" HorizontalAlignment="Center" Margin="0,32,0,0" VerticalAlignment="Top" FontFamily="MV Boli" FontWeight="Bold" FontSize="26" Foreground="#FFFF00F5"/>
+        <TextBox x:Name="txtLink" HorizontalAlignment="Center" Margin="0,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" Height="40" VerticalContentAlignment="Center" TextChanged="txtLink_TextChanged" Text="Please copy a youtube link">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <ComboBox x:Name="cmbFormat" HorizontalAlignment="Center" Margin="0,224,0,0" VerticalAlignment="Top" Width="480" Height="22" Cursor="Hand"/>
+        <Button x:Name="btnDownload" HorizontalAlignment="Center" Margin="0,344,0,0" Width="50" Click="btnDownload_Click" BorderBrush="{x:Null}" Cursor="Hand" RenderTransformOrigin="-4.7,2.982" Height="54" VerticalAlignment="Top">
+            <Button.Background>
+                <ImageBrush ImageSource="/Resources/download.png"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label Content="Storage Place:" HorizontalAlignment="Left" Margin="160,282,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtFolder" HorizontalAlignment="Left" Margin="259,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="315" Height="28" VerticalContentAlignment="Center">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="btnFolderSearch" HorizontalAlignment="Left" Margin="590,269,0,0" VerticalAlignment="Top" Height="54" Width="50" Click="btnFolderSearch_Click" BorderBrush="{x:Null}" Cursor="Hand" RenderTransformOrigin="-4.7,2.982">
+            <Button.Background>
+                <ImageBrush ImageSource="/Windows/icons8_search_128px.png"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+</Window>
