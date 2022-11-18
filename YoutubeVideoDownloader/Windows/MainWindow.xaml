@@ -12,7 +12,7 @@
 
     <Grid>
         <Label Content="Youtube Video Downloader" HorizontalAlignment="Center" Margin="0,32,0,0" VerticalAlignment="Top" FontFamily="MV Boli" FontWeight="Bold" FontSize="26" Foreground="#FFFF00F5"/>
-        <TextBox x:Name="txtLink" HorizontalAlignment="Center" Margin="0,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" Height="40" VerticalContentAlignment="Center" TextChanged="txtLink_TextChanged" Text="Please copy a youtube link">
+        <TextBox x:Name="txtLink" HorizontalAlignment="Center" Margin="0,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" Height="40" VerticalContentAlignment="Center" TextChanged="txtLink_TextChanged">
             <TextBox.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="20"/>

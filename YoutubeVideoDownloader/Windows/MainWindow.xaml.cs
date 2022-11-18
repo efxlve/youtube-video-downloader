@@ -100,7 +100,7 @@ namespace YoutubeVideoDownloader
             }
             catch
             {
-                MessageBox.Show("Please copy a youtube link!", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                //MessageBox.Show("Please copy a youtube link!", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
 
@@ -131,7 +131,11 @@ namespace YoutubeVideoDownloader
 
         private void Window_MouseEnter(object sender, MouseEventArgs e)
         {
-            txtLink.Text = Clipboard.GetText();
+            string link = Clipboard.GetText();
+            int a = link.IndexOf("youtu");
+            
+            if (a > 5)
+                txtLink.Text = link;
         }
     }
 }
